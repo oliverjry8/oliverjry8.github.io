@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="charter">
+  <title>Graduate Solicitor Portfolio | Assessment & Compliance | The Law Society of NSW</title>
+
+  <!-- Google Fonts: Libre Caslon Text & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces - Charter Theme */
+      --background: #f7f4ec;               /* warm cream paper */
+      --surface-container-low: #fffdf8;    /* bright leaf: figure cards, panels */
+      --surface-container: #ece5d4;        /* deeper cream: secondary buttons, table headers */
+      --surface-container-high: #e3dac4;   /* table header band, hover fill */
+
+      /* Ink */
+      --on-surface: #1c1f26;               /* near-black ink */
+      --on-surface-variant: #4f5360;       /* graphite: captions, secondary text */
+
+      /* Rules */
+      --outline: #b08d57;                  /* brass: rules and borders; text only on navy */
+      --outline-variant: #d9cfb8;          /* pale brass: hairline dividers */
+
+      /* Accents */
+      --primary: #14213d;                  /* deep navy: title band, primary action, links */
+      --on-primary: #f7f4ec;               /* cream on navy */
+      --primary-container: #e3e6ee;        /* pale navy wash */
+      --on-primary-container: #14213d;
+      --secondary: #2d5a4a;                /* bottle green: favorable notes */
+      --on-secondary: #f7f4ec;
+      --tertiary: #8a6a35;                 /* dark brass: small accent text on cream */
+      --error: #9b2c2c;                    /* deep crimson */
+      --on-error: #f7f4ec;
+
+      /* Data series */
+      --data-1: #14213d;                   /* navy */
+      --data-2: #8a6a35;                   /* dark brass */
+      --data-3: #2d5a4a;                   /* bottle green */
+      --data-4: #5b7aa0;                   /* slate blue */
+      --data-context: #c2bba9;             /* context gridlines */
+
+      /* Fonts */
+      --font-headline: 'Libre Caslon Text', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-label: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Spacing scale */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+
+      /* Shapes & Borders */
+      --rounded: 0.125rem;
+      --rounded-lg: 0.25rem;
+      --rounded-full: 0.125rem;
+      --brass-rule: 2px solid var(--outline);
+      --hairline: 1px solid var(--outline-variant);
+
+      /* Transitions */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Accessibility Focus Ring */
+    :focus-visible {
+      outline: 2px solid var(--outline);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Container wrapper */
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-4) var(--space-16);
+    }
+
+    /* Full-bleed Navy Title Band */
+    .title-band {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      padding: var(--space-8) var(--space-8) var(--space-6);
+      border-bottom: var(--brass-rule);
+      margin-bottom: var(--space-6);
+      position: relative;
+    }
+
+    .title-band-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      border-bottom: 1px solid rgba(176, 141, 87, 0.35);
+      padding-bottom: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .statutory-crest {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #dfcaa2;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .crest-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .report-metadata {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(247, 244, 236, 0.75);
+      text-align: right;
+    }
+
+    .title-band h1 {
+      font-family: var(--font-headline);
+      font-weight: 400;
+      font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--on-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .title-band h1 span.brass-highlight {
+      color: #dfcaa2;
+      font-style: italic;
+    }
+
+    .title-band p.lede {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: rgba(247, 244, 236, 0.9);
+      max-width: 85ch;
+      margin-bottom: var(--space-4);
+    }
+
+    .meta-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: var(--space-1) var(--space-3);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(176, 141, 87, 0.5);
+      background-color: rgba(20, 33, 61, 0.6);
+      color: #f7f4ec;
+      border-radius: var(--rounded);
+    }
+
+    .badge-pill.gold {
+      background-color: rgba(176, 141, 87, 0.2);
+      border-color: #dfcaa2;
+      color: #dfcaa2;
+    }
+
+    /* Navigation Bar */
+    .nav-bar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--background);
+      border-bottom: var(--brass-rule);
+      padding: var(--space-2) 0;
+      margin-bottom: var(--space-8);
+      box-shadow: 0 4px 12px rgba(20, 33, 61, 0.05);
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      list-style: none;
+    }
+
+    .nav-tab-btn {
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      color: var(--on-surface);
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: var(--space-2) var(--space-4);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      border-radius: var(--rounded);
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      min-height: 44px;
+    }
+
+    .nav-tab-btn:hover {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--outline);
+    }
+
+    .nav-tab-btn .tab-num {
+      color: var(--tertiary);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .nav-tab-btn.active .tab-num {
+      color: #dfcaa2;
+    }
+
+    /* Page Visibility Controls */
+    .portfolio-page {
+      display: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+    }
+
+    .portfolio-page.active-page {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: var(--space-6);
+      border-bottom: var(--hairline);
+      padding-bottom: var(--space-3);
+    }
+
+    .kicker {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--tertiary);
+      margin-bottom: var(--space-1);
+      display: block;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-headline);
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--primary);
+    }
+
+    .section-header p.subhead {
+      font-size: 1rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-1);
+      max-width: 75ch;
+    }
+
+    /* Leaf Panels & Cards */
+    .leaf-panel {
+      background-color: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      padding: var(--space-6);
+      margin-bottom: var(--space-6);
+      box-shadow: 0 1px 3px rgba(28, 31, 38, 0.04);
+    }
+
+    .leaf-panel.brass-accent {
+      border-top: 3px solid var(--outline);
+    }
+
+    .leaf-panel.navy-accent {
+      border-top: 3px solid var(--primary);
+    }
+
+    .leaf-panel.green-accent {
+      border-top: 3px solid var(--secondary);
+    }
+
+    /* Card Grids */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .grid-3col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .page-grid * {
+      min-width: 0;
+    }
+
+    /* Typography inside content */
+    h3.card-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: var(--space-2);
+      line-height: 1.3;
+    }
+
+    h4.card-subtitle {
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--tertiary);
+      margin-bottom: var(--space-3);
+    }
+
+    p {
+      margin-bottom: var(--space-3);
+      color: var(--on-surface);
+    }
+
+    p.caption {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-2);
+    }
+
+    /* Hyperlinks Styling */
+    a.guest-linkedin-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--outline);
+      text-underline-offset: 3px;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+      display: inline;
+    }
+
+    a.guest-linkedin-link:hover {
+      color: var(--tertiary);
+      text-decoration-color: var(--primary);
+    }
+
+    .linkedin-icon-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background-color: var(--surface-container);
+      border: var(--hairline);
+      padding: 1px 6px;
+      border-radius: var(--rounded);
+      font-family: var(--font-label);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-left: 4px;
+      vertical-align: middle;
+      text-decoration: none !important;
+    }
+
+    /* Tables */
+    .data-table-container {
+      overflow-x: auto;
+      margin-bottom: var(--space-6);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      background-color: var(--surface-container-low);
+    }
+
+    table.charter-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    table.charter-table th {
+      background-color: var(--surface-container);
+      color: var(--on-surface);
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 2px solid var(--outline);
+    }
+
+    table.charter-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: var(--hairline);
+      color: var(--on-surface);
+      vertical-align: top;
+    }
+
+    table.charter-table tr:hover td {
+      background-color: rgba(227, 218, 196, 0.35);
+    }
+
+    .numeric-cell {
+      font-variant-numeric: tabular-nums lining-nums;
+      text-align: right;
+    }
+
+    /* Quote Callouts */
+    .charter-quote {
+      border-left: 3px solid var(--outline);
+      padding: var(--space-4) var(--space-6);
+      background-color: var(--surface-container);
+      margin: var(--space-4) 0;
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
+    .quote-author {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-2);
+      display: block;
+    }
+
+    /* Interactive Comparison Bar Chart for Survey Data */
+    .chart-container {
+      margin: var(--space-4) 0;
+    }
+
+    .metric-row {
+      margin-bottom: var(--space-4);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: var(--space-1);
+    }
+
+    .metric-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--on-surface);
+    }
+
+    .metric-values {
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+      font-family: var(--font-label);
+    }
+
+    .val-me {
+      color: var(--primary);
+      font-weight: 700;
+      margin-right: var(--space-3);
+    }
+
+    .val-team {
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    .bar-track {
+      height: 12px;
+      background-color: var(--surface-container);
+      border-radius: var(--rounded);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+
+    .bar-fill-me {
+      height: 100%;
+      background-color: var(--primary);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: var(--rounded);
+      transition: width 0.6s var(--ease-out);
+    }
+
+    .bar-marker-team {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: var(--outline);
+      z-index: 2;
+      box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    }
+
+    /* Interactive Tabs within a Page */
+    .subtabs-nav {
+      display: flex;
+      gap: var(--space-2);
+      border-bottom: 2px solid var(--outline-variant);
+      margin-bottom: var(--space-4);
+      overflow-x: auto;
+    }
+
+    .subtab-btn {
+      background: none;
+      border: none;
+      padding: var(--space-2) var(--space-3);
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.15s ease;
+      min-height: 40px;
+    }
+
+    .subtab-btn:hover {
+      color: var(--primary);
+    }
+
+    .subtab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      font-weight: 700;
+    }
+
+    .subtab-content {
+      display: none;
+    }
+
+    .subtab-content.active {
+      display: block;
+    }
+
+    /* Slides Showcase Mockups */
+    .slide-mockup {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 2px solid #334155;
+      border-radius: var(--rounded);
+      padding: var(--space-6);
+      margin: var(--space-4) 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .slide-mockup-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #334155;
+      padding-bottom: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .slide-badge {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .slide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: var(--space-4);
+    }
+
+    .slide-card {
+      background: #1e293b;
+      border: 1px solid #475569;
+      padding: var(--space-4);
+      border-radius: 2px;
+    }
+
+    .slide-card h5 {
+      color: #38bdf8;
+      font-size: 0.9rem;
+      margin-bottom: var(--space-2);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    .slide-card p {
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* Page Navigation Footer */
+    .page-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: var(--brass-rule);
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .btn-charter {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border: 1px solid var(--outline);
+      font-family: var(--font-label);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: var(--space-3) var(--space-6);
+      cursor: pointer;
+      border-radius: var(--rounded);
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      text-decoration: none;
+    }
+
+    .btn-charter:hover {
+      background-color: #1e315b;
+      border-color: #dfcaa2;
+    }
+
+    .btn-charter.secondary {
+      background-color: var(--surface-container);
+      color: var(--primary);
+      border-color: var(--outline-variant);
+    }
+
+    .btn-charter.secondary:hover {
+      background-color: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+
+    /* Accordion Elements */
+    .accordion-item {
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      margin-bottom: var(--space-3);
+      background-color: var(--surface-container-low);
+      overflow: hidden;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+      min-height: 44px;
+    }
+
+    .accordion-trigger:hover {
+      background-color: var(--surface-container);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: var(--space-4);
+      border-top: var(--hairline);
+      background-color: #fffdfa;
+      font-size: 0.9rem;
+    }
+
+    .accordion-item.open .accordion-content {
+      display: block;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-icon {
+      transition: transform 0.2s ease;
+      font-weight: 700;
+      color: var(--tertiary);
+    }
+
+    /* Quick Directory Drawer */
+    .directory-banner {
+      background-color: var(--surface-container);
+      border: var(--hairline);
+      border-left: 4px solid var(--outline);
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--rounded);
+      margin-bottom: var(--space-6);
+    }
+
+    .directory-banner h4 {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .guest-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .guest-chip {
+      background-color: var(--surface-container-low);
+      border: var(--hairline);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--rounded);
+      font-size: 0.8rem;
+    }
+
+    /* Modal for LinkedIn profile fallback notice */
+    .link-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(20, 33, 61, 0.65);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: var(--space-4);
+    }
+
+    .link-modal {
+      background: var(--surface-container-low);
+      border: var(--brass-rule);
+      border-radius: var(--rounded);
+      max-width: 540px;
+      width: 100%;
+      padding: var(--space-6);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+
+    .link-modal h3 {
+      font-family: var(--font-headline);
+      color: var(--primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .link-modal p {
+      margin-bottom: var(--space-4);
+      font-size: 0.9rem;
+      word-break: break-all;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--space-3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .app-container {
+        padding: 0 var(--space-3) var(--space-8);
+      }
+      .title-band {
+        padding: var(--space-6) var(--space-4) var(--space-4);
+      }
+      .nav-tabs {
+        flex-direction: column;
+      }
+      .nav-tab-btn {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .page-footer-nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-charter {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-Bleed Navy Institutional Title Band -->
+  <header class="title-band">
+    <div class="app-container" style="padding-bottom: 0;">
+      <div class="title-band-header">
+        <div class="statutory-crest">
+          <svg class="crest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          The Law Society of New South Wales &bull; Graduate Admissions &bull; Assessment & Compliance
+        </div>
+        <div class="report-metadata">
+          Candidate ID: 48137782 &bull; Unit: MQBS3010 Capstone &bull; Date: November 2026
+        </div>
+      </div>
+
+      <h1>
+        Graduate Solicitor &bull; <span class="brass-highlight">Assessment &amp; Compliance</span>
+      </h1>
+      <p class="lede">
+        My professional e-portfolio synthesising legal scholarship, regulatory compliance operations, empirical psychometric evaluation, and strategic consultancy evidence in response to the Graduate Solicitor role at The Law Society of New South Wales.
+      </p>
+
+      <div class="meta-badges-row">
+        <span class="badge-pill gold">Candidate: Oliver Yao (48137782)</span>
+        <span class="badge-pill">Target: Assessment &amp; Compliance Directorate</span>
+        <span class="badge-pill">Statutory Focus: Legal Profession Uniform Law (NSW)</span>
+        <span class="badge-pill">Consultancy Capstone: Group 5A</span>
+        <span class="badge-pill">WEF 2030 Core Skills Validated</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Sticky Navigation Bar across 5 Distinct Pages -->
+    <nav class="nav-bar-wrapper" aria-label="E-Portfolio Page Navigation">
+      <ul class="nav-tabs" role="tablist">
+        <li role="presentation">
+          <button class="nav-tab-btn active" id="tab-btn-1" role="tab" aria-selected="true" aria-controls="page-1" onclick="navigateToPage(1)">
+            <span class="tab-num">01.</span> Executive Profile &amp; Role Fit
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-tab-btn" id="tab-btn-2" role="tab" aria-selected="false" aria-controls="page-2" onclick="navigateToPage(2)">
+            <span class="tab-num">02.</span> WEF Core Skills &amp; Guest Insights
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-tab-btn" id="tab-btn-3" role="tab" aria-selected="false" aria-controls="page-3" onclick="navigateToPage(3)">
+            <span class="tab-num">03.</span> Capstone Agility Evidence
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-tab-btn" id="tab-btn-4" role="tab" aria-selected="false" aria-controls="page-4" onclick="navigateToPage(4)">
+            <span class="tab-num">04.</span> Psychometric Team Dynamics
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-tab-btn" id="tab-btn-5" role="tab" aria-selected="false" aria-controls="page-5" onclick="navigateToPage(5)">
+            <span class="tab-num">05.</span> Multidisciplinary Practice
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Global Guest Speaker Hyperlink Quick Directory -->
+    <aside class="directory-banner">
+      <h4>MQBS3010 Capstone Industry Guest Speaker Directory (Verified LinkedIn Credentials)</h4>
+      <div class="guest-chips-row">
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/alexander-dowthwaite-92224717b/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Design and Education at The King's Foundation Australia</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/rodriguesnick/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">People Partner at Canva</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/paris-dee-784947289/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Cybersecurity Graduate at Commonwealth Bank</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/ahad-anhiang-zafar-5b87a7183/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Senior Accountant at Lighthouse Service Partners</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+        <div class="guest-chip">
+          &bull; <a href="https://www.linkedin.com/in/melissaryan01/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Incubation and Entrepreneurship at Macquarie University</a>
+          <span class="linkedin-icon-tag">LinkedIn</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================================================================
+         PAGE 1: EXECUTIVE PROFILE & PROFESSIONAL ALIGNMENT
+         =================================================================== -->
+    <section id="page-1" class="portfolio-page active-page" role="tabpanel" aria-labelledby="tab-btn-1">
+      <header class="section-header">
+        <span class="kicker">Page 01 &bull; Candidature &amp; Professional Statement</span>
+        <h2>Executive Profile &amp; Statutory Alignment</h2>
+        <p class="subhead">
+          Presenting my targeted value proposition for the Graduate Solicitor, Assessment and Compliance position within The Law Society of New South Wales.
+        </p>
+      </header>
+
+      <div class="grid-2col">
+        <!-- Candidature Manifesto -->
+        <article class="leaf-panel brass-accent">
+          <h3 class="card-title">My Professional Value Proposition</h3>
+          <h4 class="card-subtitle">Bridging Legal Scholarship, Operational Compliance, and Public Protection</h4>
+          <p>
+            I present this e-portfolio as an authentic, evidence-based demonstration of my readiness to contribute immediately to the <strong>Assessment and Compliance</strong> division of <strong>The Law Society of New South Wales</strong>. As a graduating legal and commerce scholar from Macquarie University, my vocational trajectory has been deliberately constructed around regulatory integrity, evidentiary analysis, and public-interest advocacy.
+          </p>
+          <p>
+            The role of Graduate Solicitor within Assessment and Compliance demands far more than theoretical doctrinal knowledge; it requires a meticulous investigative mindset, comfort with complex regulatory frameworks, and an unwavering commitment to public protection. Through my practical experience as a Paralegal at <em>The People's Solicitors</em>, an Administrative and Compliance Assistant at <em>AutoSwift</em>, and Founding Director of <em>Pass it Forward</em>, I have developed the operational rigour necessary to examine compliance documentation, interpret statutory obligations, and maintain the integrity of the profession.
+          </p>
+          <div class="charter-quote">
+            "Public protection is the anchor of everything we do. Our day-to-day work is not about winning over a client; it is about everyday maintenance of the standards of the legal profession."
+            <span class="quote-author">
+              &mdash; Core insight shared by the <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a> during our MQBS3010 Capstone Industry Lecture
+            </span>
+          </div>
+          <p>
+            This observation resonates deeply with my personal philosophy. My background proves that I possess the composure, diagnostic capability, and ethical compass to uphold the high standards mandated under the <em>Legal Profession Uniform Law (NSW)</em>.
+          </p>
+        </article>
+
+        <!-- Statutory Context Panel -->
+        <article class="leaf-panel navy-accent">
+          <h3 class="card-title">Statutory Framework &amp; Directorate Alignment</h3>
+          <h4 class="card-subtitle">Mandate of the Assessment &amp; Compliance Directorate</h4>
+          <p>
+            The Assessment and Compliance Directorate at The Law Society of NSW is charged with upholding professional standards and safeguarding consumer trust across more than 38,000 practising solicitors. In evaluating this role, I have mapped my core skills directly against the statutory mandates I will administer:
+          </p>
+
+          <div class="data-table-container">
+            <table class="charter-table" aria-label="Statutory Mandate and Personal Capability Mapping">
+              <thead>
+                <tr>
+                  <th>Statutory Mandate</th>
+                  <th>Operational Focus</th>
+                  <th>My Evidenced Capability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Legal Profession Uniform Law (NSW)</strong></td>
+                  <td>Practising certificate renewals, suitability assessments, and fitness to practise evaluations.</td>
+                  <td>Substantive legal research and statutory interpretation honed through my paralegal practice at The People's Solicitors.</td>
+                </tr>
+                <tr>
+                  <td><strong>Trust Account Oversight</strong></td>
+                  <td>Part 4.2 compliance, annual trust audit examinations, and monitoring external examiners' reports.</td>
+                  <td>Commercial accounting expertise from my MQBS3010 capstone, auditing financial records, and operational record-keeping at AutoSwift.</td>
+                </tr>
+                <tr>
+                  <td><strong>AML / CTF Regulatory Reforms</strong></td>
+                  <td>Preparing the legal profession for Tranche 2 Anti-Money Laundering and Counter-Terrorism Financing obligations.</td>
+                  <td>International business regulatory analysis developed during my Agility Challenge global sourcing strategy.</td>
+                </tr>
+                <tr>
+                  <td><strong>Professional Standards &amp; Conduct</strong></td>
+                  <td>Assessing complaints, investigating breaches of the Australian Solicitors' Conduct Rules (ASCR).</td>
+                  <td>High ethical judgement and transparent risk management evidenced in my directorial governance of a registered non-profit.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="caption">
+            My interdisciplinary qualification combining commerce, legal studies, and business strategy uniquely positions me to interpret financial records and statutory provisions with equal fluency.
+          </p>
+        </article>
+      </div>
+
+      <!-- Interactive Role Alignment Self-Assessment Matrix -->
+      <section class="leaf-panel">
+        <h3 class="card-title">Interactive Competency Fit: Graduate Solicitor (Assessment &amp; Compliance)</h3>
+        <h4 class="card-subtitle">Examine how my verified competencies address key selection criteria</h4>
+
+        <div class="subtabs-nav" role="tablist">
+          <button class="subtab-btn active" onclick="switchSubtab(event, 'comp-crit1')">Criterion 1: Statutory Interpretation</button>
+          <button class="subtab-btn" onclick="switchSubtab(event, 'comp-crit2')">Criterion 2: Investigative Rigour</button>
+          <button class="subtab-btn" onclick="switchSubtab(event, 'comp-crit3')">Criterion 3: Stakeholder Communication</button>
+          <button class="subtab-btn" onclick="switchSubtab(event, 'comp-crit4')">Criterion 4: Commercial &amp; Data Literacy</button>
+        </div>
+
+        <div id="comp-crit1" class="subtab-content active">
+          <p>
+            <strong>Criterion 1: Demonstrated capacity to interpret, apply, and explain provisions of the Legal Profession Uniform Law (NSW) and associated regulations.</strong>
+          </p>
+          <p>
+            <em>My Demonstrated Evidence:</em> In my paralegal duties at The People's Solicitors, I regularly conduct cross-jurisdictional case law analyses and parse statutory instruments under stringent deadlines. During my capstone project, I drafted the international regulatory compliance framework for a renewable energy joint venture, harmonising NSW planning law with cross-border commercial contracts. I understand that statutory interpretation within the Law Society requires not merely rigid literalism, but a contextual appreciation of public interest and client protection.
+          </p>
+        </div>
+
+        <div id="comp-crit2" class="subtab-content">
+          <p>
+            <strong>Criterion 2: High-level analytical and investigative skills to evaluate complex documentary evidence and compliance filings.</strong>
+          </p>
+          <p>
+            <em>My Demonstrated Evidence:</em> As an Administrative Assistant at AutoSwift, I independently audit operational records, vehicle title registrations, and compliance files to guarantee defect-free legal transfer. My forensic approach was reinforced by the <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a>, who highlighted how trust account investigations merge quantitative financial tracing with qualitative practitioner interview notes. I am trained to spot discrepancies that others overlook.
+          </p>
+        </div>
+
+        <div id="comp-crit3" class="subtab-content">
+          <p>
+            <strong>Criterion 3: Clear, objective written and verbal communication capable of articulating sensitive regulatory decisions.</strong>
+          </p>
+          <p>
+            <em>My Demonstrated Evidence:</em> As Lead Editor of <em>Dogbowl Magazine</em>, I have overseen the production and editorial review of multiple print and digital issues, enforcing rigorous publication standards. In my directorial capacity at <em>Pass it Forward</em>, I regularly deliver formal governance briefings to our board, benefactors, and community partners, presenting regulatory filings and audited accounts with absolute clarity and diplomacy.
+          </p>
+        </div>
+
+        <div id="comp-crit4" class="subtab-content">
+          <p>
+            <strong>Criterion 4: Digital fluency, data analytics awareness, and understanding of contemporary compliance technology.</strong>
+          </p>
+          <p>
+            <em>My Demonstrated Evidence:</em> My work within MQBS3010 placed me at the cutting edge of digital business models. In the words of the <a href="https://www.linkedin.com/in/paris-dee-784947289/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Cybersecurity Graduate at Commonwealth Bank</a>, modern professionals must pair technical solutions with commercial clarity. I bring hands-on familiarity with ERP enterprise systems, compliance database queries, and digital legal workflows, ensuring I can support the Society's ongoing digital transformation initiatives.
+          </p>
+        </div>
+      </section>
+
+      <!-- Page 1 Navigation Footer -->
+      <footer class="page-footer-nav">
+        <span class="caption">Page 1 of 5 &bull; Executive Profile &amp; Role Fit</span>
+        <button class="btn-charter" onclick="navigateToPage(2)">
+          Proceed to Page 02: WEF Core Skills &amp; Guest Insights &rarr;
+        </button>
+      </footer>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 2: WEF CORE SKILLS & INDUSTRY WISDOM
+         =================================================================== -->
+    <section id="page-2" class="portfolio-page" role="tabpanel" aria-labelledby="tab-btn-2">
+      <header class="section-header">
+        <span class="kicker">Page 02 &bull; World Economic Forum 2030 Competency Framework</span>
+        <h2>WEF Core Skills for 2030 &amp; Industry Insights</h2>
+        <p class="subhead">
+          Synthesising the World Economic Forum's core employability dimensions with practical wisdom from six guest industry leaders, woven directly into my personal professional philosophy.
+        </p>
+      </header>
+
+      <!-- Synthesis Banner -->
+      <div class="leaf-panel brass-accent">
+        <h3 class="card-title">Employability Grounded in the WEF Future of Jobs Framework</h3>
+        <p>
+          The World Economic Forum's <em>Future of Jobs Report</em> identifies the critical capabilities required to navigate institutional disruption, technological acceleration, and complex governance environments. The MQBS3010 capstone explicitly challenges us to develop and demonstrate five core competencies for 2030: <strong>Motivation and Self-Awareness</strong>, <strong>Curiosity and Lifelong Learning</strong>, <strong>Leadership and Social Influence</strong>, <strong>Empathy and Active Learning</strong>, and <strong>Talent Management</strong>.
+        </p>
+        <p>
+          Throughout the semester, I have synthesised these theoretical competencies with the direct lived experiences of our capstone industry speakers. Below, I articulate how these insights inform my approach as an aspiring regulatory compliance solicitor.
+        </p>
+      </div>
+
+      <!-- 6 Industry Guests Synthesised Cards Grid -->
+      <div class="grid-2col">
+        <!-- Guest 1: Law Society Analyst -->
+        <article class="leaf-panel navy-accent">
+          <h4 class="card-subtitle">Statutory Oversight &amp; Public Protection</h4>
+          <h3 class="card-title">1. <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a></h3>
+          <p>
+            During her address to our capstone cohort, the <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a> offered an insider perspective into trust account investigations within the Professional Standards Department. She illuminated how regulatory enforcement relies upon pairing quantitative data analytics (tracing ledger lodgements and spotting irregular trust transfers) with qualitative legal discernment.
+          </p>
+          <div class="charter-quote">
+            "Accountability stays with the human practitioner, regardless of the tools or technology deployed. In regulation, data is our evidence, but lifelong learning is our safeguard."
+          </div>
+          <p>
+            <em>My Personal Application:</em> I embody her insight by continuously pursuing formal professional development alongside practical duties. Her emphasis on public protection as our ultimate stakeholder has become my guiding ethical benchmark. In Assessment and Compliance, I will approach every practitioner file not as an administrative chore, but as an essential safeguard for the public's confidence in NSW justice.
+          </p>
+        </article>
+
+        <!-- Guest 2: People Partner at Canva -->
+        <article class="leaf-panel green-accent">
+          <h4 class="card-subtitle">Motivation &amp; Self-Awareness</h4>
+          <h3 class="card-title">2. <a href="https://www.linkedin.com/in/rodriguesnick/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">People Partner at Canva</a></h3>
+          <p>
+            The <a href="https://www.linkedin.com/in/rodriguesnick/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">People Partner at Canva</a> introduced our cohort to the "Manual of Me" methodology—a structured framework where professionals transparently document their working styles, decision-making preferences, stress signals, and feedback channels. He stressed that difficult conversations regarding underperformance or compliance are not acts of harshness, but acts of fundamental fairness to the wider collective.
+          </p>
+          <div class="charter-quote">
+            "Get comfortable with being uncomfortable. Leadership is not a job title; it is the willingness to proactively surface problems before they escalate into structural failures."
+          </div>
+          <p>
+            <em>My Personal Application:</em> In my capstone team (Group 5A), I drafted an informal working compact inspired by his "Manual of Me", clarifying our individual strengths and turnaround expectations. This proactive self-awareness prevented interpersonal friction during our intense Agility Challenge. Within Assessment and Compliance, I will apply his principle of "fairness over avoidance" when communicating difficult regulatory findings to practitioners.
+          </p>
+        </article>
+
+        <!-- Guest 3: Cybersecurity Graduate at CommBank -->
+        <article class="leaf-panel">
+          <h4 class="card-subtitle">Curiosity &amp; Lifelong Learning</h4>
+          <h3 class="card-title">3. <a href="https://www.linkedin.com/in/paris-dee-784947289/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Cybersecurity Graduate at Commonwealth Bank</a></h3>
+          <p>
+            Sharing her transition from correctional facility operations into corporate fraud and scams detection, the <a href="https://www.linkedin.com/in/paris-dee-784947289/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Cybersecurity Graduate at Commonwealth Bank</a> demonstrated how intense intellectual curiosity dismantles imposter syndrome. She highlighted her habit of non-transactional networking—initiating conversations with colleagues across diverse units simply to understand their operational workflows.
+          </p>
+          <div class="charter-quote">
+            "Treat imposter syndrome as proof that you care deeply about delivering excellence. Always anchor technical compliance in a clear 'business snapshot' that stakeholders understand."
+          </div>
+          <p>
+            <em>My Personal Application:</em> I actively adopt her "business snapshot" discipline. When analysing legal constraints, I avoid presenting purely theoretical legalese; instead, I articulate the commercial operational impact for stakeholders. Her non-transactional curiosity has inspired me to reach across disciplines, allowing me to bridge accounting nuances with legal requirements.
+          </p>
+        </article>
+
+        <!-- Guest 4: Senior Accountant at Lighthouse Service Partners -->
+        <article class="leaf-panel">
+          <h4 class="card-subtitle">Leadership &amp; Social Influence</h4>
+          <h3 class="card-title">4. <a href="https://www.linkedin.com/in/ahad-anhiang-zafar-5b87a7183/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Senior Accountant at Lighthouse Service Partners</a></h3>
+          <p>
+            Reflecting on his progression from PwC audit into complex M&amp;A integration, the <a href="https://www.linkedin.com/in/ahad-anhiang-zafar-5b87a7183/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Senior Accountant at Lighthouse Service Partners</a> championed the maxim: "Be the change you want to see." When a team workflow stalls, true leadership emerges not from formal rank, but from taking ownership to map a transparent path forward and negotiate capacity honestly.
+          </p>
+          <div class="charter-quote">
+            "Diagnose whether an underperformance is a systemic operational flaw or an external market shock before prescribing fixes. And never over-promise without explicit buy-in."
+          </div>
+          <p>
+            <em>My Personal Application:</em> When Group 5A confronted our consultancy shock deadline, I stepped into this exact leadership vacuum by establishing our project milestone board and drafting the master deck architecture. As a Graduate Solicitor, I will exercise this initiative daily, proactively preparing compliance briefs and identifying process bottlenecks before they affect case throughput.
+          </p>
+        </article>
+
+        <!-- Guest 5: Director of Incubation & Entrepreneurship at Macquarie -->
+        <article class="leaf-panel">
+          <h4 class="card-subtitle">Empathy &amp; Critical Discernment</h4>
+          <h3 class="card-title">5. <a href="https://www.linkedin.com/in/melissaryan01/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Incubation and Entrepreneurship at Macquarie University</a></h3>
+          <p>
+            Managing over 100 deep-tech scaleups and a $20 million venture fund, the <a href="https://www.linkedin.com/in/melissaryan01/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Incubation and Entrepreneurship at Macquarie University</a> offered profound guidance on team empathy and cognitive discipline. She warned against uncritical reliance on generative AI, emphasising that universities and high-level professions exist specifically to cultivate slow, deliberate, ethical critical thought.
+          </p>
+          <div class="charter-quote">
+            "Reliability is the single greatest currency of trust in any team. Lean boldly into your natural superpowers, and protect slow, rigorous critical analysis as your ultimate differentiator."
+          </div>
+          <p>
+            <em>My Personal Application:</em> Her caution against algorithmic complacency strongly informs my legal research methodology. In compliance investigations, where practitioners' livelihoods and clients' trust funds are at stake, I treat automated tools merely as preliminary accelerators, ensuring that every finding is subjected to rigorous, manual statutory verification.
+          </p>
+        </article>
+
+        <!-- Guest 6: Director of Design & Education at The King's Foundation -->
+        <article class="leaf-panel">
+          <h4 class="card-subtitle">Interdisciplinary Stewardship &amp; Ambiguity</h4>
+          <h3 class="card-title">6. <a href="https://www.linkedin.com/in/alexander-dowthwaite-92224717b/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Design and Education at The King's Foundation Australia</a></h3>
+          <p>
+            As our live capstone client, the <a href="https://www.linkedin.com/in/alexander-dowthwaite-92224717b/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Design and Education at The King's Foundation Australia</a> presented a multifaceted brief centering on Hillview Estate. He demonstrated how interdisciplinary stewardship—balancing heritage preservation, economic viability, environmental conservation, and First Nations engagement—requires comfort with ambiguity and deep respect for procedural guidelines.
+          </p>
+          <div class="charter-quote">
+            "Work under a living brief requires reasoning from analogous precedents. When you unite different disciplines under a shared harmony, sustainable solutions emerge naturally."
+          </div>
+          <p>
+            <em>My Personal Application:</em> In formulating Group 5A's consultation presentation for his organisation, I synthesised international trade law with heritage estate constraints. This capacity to harmonize competing statutory, environmental, and financial imperatives is directly transferable to The Law Society, where compliance officers must reconcile rigid statutory rules with practical commercial realities.
+          </p>
+        </article>
+      </div>
+
+      <!-- WEF 2030 Competency Matrix Table -->
+      <section class="leaf-panel">
+        <h3 class="card-title">My WEF 2030 Core Skills Synthesis Table</h3>
+        <div class="data-table-container">
+          <table class="charter-table" aria-label="WEF Skills Evidence Table">
+            <thead>
+              <tr>
+                <th>WEF 2030 Skill Dimension</th>
+                <th>Guiding Industry Speaker Job Title</th>
+                <th>My Concrete Academic &amp; Professional Evidence</th>
+                <th>Compliance Transferability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Motivation &amp; Self-Awareness</strong></td>
+                <td><a href="https://www.linkedin.com/in/rodriguesnick/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">People Partner at Canva</a></td>
+                <td>Psychometric Survey 2 score of 6.5/7 in Psychological Safety; active emotion regulation and structured reflection on team dynamics.</td>
+                <td>Objective self-audit; recognizing cognitive biases when reviewing complaints against legal practitioners.</td>
+              </tr>
+              <tr>
+                <td><strong>Curiosity &amp; Lifelong Learning</strong></td>
+                <td><a href="https://www.linkedin.com/in/paris-dee-784947289/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Cybersecurity Graduate at Commonwealth Bank</a></td>
+                <td>Continuous self-directed study across NSW Uniform Law, AML/CTF reforms, and international trade governance during the Agility Challenge.</td>
+                <td>Rapidly mastering emerging legal tech, AI governance, and Tranche 2 anti-money laundering legislative updates.</td>
+              </tr>
+              <tr>
+                <td><strong>Leadership &amp; Social Influence</strong></td>
+                <td><a href="https://www.linkedin.com/in/ahad-anhiang-zafar-5b87a7183/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Senior Accountant at Lighthouse Service Partners</a></td>
+                <td>Directing <em>Pass it Forward</em>; orchestrating Group 5A's strategic slide decks and driving team alignment under time pressure.</td>
+                <td>Influencing without statutory coercion; negotiating compliance remediation plans with law firm principals.</td>
+              </tr>
+              <tr>
+                <td><strong>Empathy &amp; Active Learning</strong></td>
+                <td><a href="https://www.linkedin.com/in/melissaryan01/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Incubation and Entrepreneurship at Macquarie University</a></td>
+                <td>Top-decile rating in Interpersonal Emotion Management (6.2/7), employing cognitive reframing to support peers facing acute stress.</td>
+                <td>Handling distressing consumer complaints and practitioner inquiries with compassionate yet firm professional detachment.</td>
+              </tr>
+              <tr>
+                <td><strong>Talent Management &amp; Collaboration</strong></td>
+                <td><a href="https://www.linkedin.com/in/alexander-dowthwaite-92224717b/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Design and Education at The King's Foundation Australia</a></td>
+                <td>Unifying Group 5A's diverse majors (Finance, Marketing, International Business) to deliver an integrated client pitch for King Charles III's charity.</td>
+                <td>Collaborating seamlessly in multi-disciplinary regulatory teams comprising accountants, investigators, and senior solicitors.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Page 2 Navigation Footer -->
+      <footer class="page-footer-nav">
+        <button class="btn-charter secondary" onclick="navigateToPage(1)">
+          &larr; Back to Page 01: Executive Profile
+        </button>
+        <button class="btn-charter" onclick="navigateToPage(3)">
+          Proceed to Page 03: Capstone Agility Evidence &rarr;
+        </button>
+      </footer>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 3: CAPSTONE EVIDENCE — THE AGILITY CHALLENGE
+         =================================================================== -->
+    <section id="page-3" class="portfolio-page" role="tabpanel" aria-labelledby="tab-btn-3">
+      <header class="section-header">
+        <span class="kicker">Page 03 &bull; Academic Rigour &amp; Strategic Execution</span>
+        <h2>Capstone Evidence: The Agility Challenge</h2>
+        <p class="subhead">
+          Detailed documentation of my individual contribution to Group 5A's consultancy consultation document for The King's Foundation Australia under United Nations SDG 9.
+        </p>
+      </header>
+
+      <div class="grid-2col">
+        <!-- Project Context Panel -->
+        <article class="leaf-panel brass-accent">
+          <h3 class="card-title">Consultancy Shock Context: Group 5A &amp; UNSDG 9</h3>
+          <h4 class="card-subtitle">Client: The King's Foundation Australia &bull; Project: Clean-Tech Renewable Energy JVs</h4>
+          <p>
+            The Agility Challenge simulated real-world corporate consultancy pressure, requiring our team (Group 5A) to rapidly conceptualise, validate, and present an innovative solution addressing <strong>United Nations Sustainable Development Goal 9 (Industry, Innovation, and Infrastructure)</strong> for our live industry client, <strong>The King's Foundation Australia</strong>.
+          </p>
+          <p>
+            Guided by the holistic "harmony" principles articulated by the <a href="https://www.linkedin.com/in/alexander-dowthwaite-92224717b/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Director of Design and Education at The King's Foundation Australia</a>, our team conceptualised a digital matching platform facilitating renewable energy joint ventures (JVs) between rural agricultural landholders and commercial clean energy producers. The project mirrored the estate regeneration principles pioneered at Dumfries House in Scotland and Hillview Estate in New South Wales.
+          </p>
+          <p>
+            As the designated <strong>International Business and Legal Specialist</strong> within Group 5A, my primary individual responsibility was formulating the <em>Global Sourcing</em> and <em>International Scalability</em> strategies, establishing how our platform could procure clean-tech hardware from overseas supply chains, attract foreign green climate capital, and scale cross-border using modular contractual frameworks.
+          </p>
+        </article>
+
+        <!-- Individual Ownership Statement -->
+        <article class="leaf-panel navy-accent">
+          <h3 class="card-title">My Individual Strategic Contributions</h3>
+          <h4 class="card-subtitle">Authored Assessment Task 1 Presentation Slides &amp; Strategy</h4>
+          <p>
+            I personally conceptualised, researched, and designed the two core operational slides in Group 5A's consultation presentation deck. The strategic rationale behind my contribution was three-fold:
+          </p>
+          <ul style="padding-left: var(--space-4); margin-bottom: var(--space-3);">
+            <li style="margin-bottom: var(--space-2);">
+              <strong>Global Supply Chain Sourcing:</strong> Formulating an international procurement model to source premium solar photovoltaic cells, wind turbines, and micro-grid battery systems from verified manufacturers across East Asia and Europe, mitigating local supply shortages.
+            </li>
+            <li style="margin-bottom: var(--space-2);">
+              <strong>Green Finance Capital Mobilisation:</strong> Structuring institutional channels to attract sovereign wealth funds, ESG bond issuances, and foreign climate finance to co-fund Australian rural renewable transitions.
+            </li>
+            <li style="margin-bottom: var(--space-2);">
+              <strong>Modular Legal Templates ('JV-as-a-Service'):</strong> Developing standard-form joint venture contracts and modular licensing protocols that cut transaction costs for rural farming families while complying with NSW state planning and foreign investment review board (FIRB) standards.
+            </li>
+          </ul>
+          <p class="caption">
+            This exercise directly mirrored the due diligence checks and regulatory compliance reviews that I will conduct daily within the Law Society's Assessment and Compliance team.
+          </p>
+        </article>
+      </div>
+
+      <!-- Interactive Slide Reconstruction & Analysis -->
+      <section class="leaf-panel">
+        <h3 class="card-title">Deconstruction of My Individual Slide Contributions</h3>
+        <p>
+          Below are interactive reconstructions of the exact slides I conceptualised, authored, and presented for Group 5A's submission, demonstrating my capacity to synthesise international commerce, legal structuring, and stakeholder governance.
+        </p>
+
+        <!-- Slide 1 Reconstruction -->
+        <div class="slide-mockup">
+          <div class="slide-mockup-header">
+            <div>
+              <span class="slide-badge">Group 5A &bull; Slide 07 Conceptualised &amp; Designed by Me</span>
+              <h4 style="color: #ffffff; font-size: 1.15rem; margin-top: 4px;">GLOBAL SOURCING STRATEGY &bull; UNSDG 9 INFRASTRUCTURE</h4>
+            </div>
+            <span style="font-family: var(--font-label); font-size: 0.75rem; color: #94a3b8;">Assessment Task 1 Evidence</span>
+          </div>
+
+          <div class="slide-grid">
+            <div class="slide-card">
+              <h5>1. East Asian Clean-Tech Hubs</h5>
+              <p>
+                Established tier-one hardware sourcing agreements with solar PV and sodium-ion battery manufacturers across South Korea and Japan, guaranteeing high efficiency yields and compliance with Australian Standards (AS/NZS 5033).
+              </p>
+            </div>
+            <div class="slide-card">
+              <h5>2. European Modular Turbines</h5>
+              <p>
+                Identified specialized small-footprint wind generation equipment from Denmark and Germany suited for low-impact deployment on sensitive agricultural land and heritage-adjacent rural parcels.
+              </p>
+            </div>
+            <div class="slide-card">
+              <h5>3. Supply Chain Risk Hedging</h5>
+              <p>
+                Formulated dual-sourcing contingency matrices to protect the platform against maritime geopolitical bottlenecks, incorporating strict ESG anti-slavery compliance auditing across all tier-two suppliers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 Reconstruction -->
+        <div class="slide-mockup" style="border-color: #0284c7;">
+          <div class="slide-mockup-header">
+            <div>
+              <span class="slide-badge" style="background-color: #0d9488;">Group 5A &bull; Slide 08 Conceptualised &amp; Designed by Me</span>
+              <h4 style="color: #ffffff; font-size: 1.15rem; margin-top: 4px;">INTERNATIONAL SCALABILITY &amp; 'JV-AS-A-SERVICE' MODEL</h4>
+            </div>
+            <span style="font-family: var(--font-label); font-size: 0.75rem; color: #94a3b8;">Assessment Task 1 Evidence</span>
+          </div>
+
+          <div class="slide-grid">
+            <div class="slide-card">
+              <h5>1. Modular Legal Contracting</h5>
+              <p>
+                Standardised joint venture legal architectures offering landowner equity protection, clear revenue-share waterfalls, and dispute-resolution escrow mechanisms, reducing legal onboarding time by 65%.
+              </p>
+            </div>
+            <div class="slide-card">
+              <h5>2. Foreign Green Climate Finance</h5>
+              <p>
+                Structured investment conduits aligned with the International Capital Market Association (ICMA) Green Bond Principles to draw institutional capital from Europe and Singapore into regional Australian renewables.
+              </p>
+            </div>
+            <div class="slide-card">
+              <h5>3. Transnational Franchise Model</h5>
+              <p>
+                Engineered the expansion roadmap for The King's Foundation to replicate this digital matching platform across Commonwealth jurisdictions (including the UK, Canada, and New Zealand) under unified governance principles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytical Deconstruction Table -->
+        <h4 class="card-subtitle" style="margin-top: var(--space-6);">Direct Competency Mapping to The Law Society Compliance Role</h4>
+        <div class="data-table-container">
+          <table class="charter-table" aria-label="Capstone Experience Mapping to Solicitor Tasks">
+            <thead>
+              <tr>
+                <th>Strategic Capstone Element</th>
+                <th>My Evidenced Analytical Action</th>
+                <th>Relevance to Assessment &amp; Compliance Directorate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Modular Legal Contracting</strong></td>
+                <td>I drafted uniform terms of engagement and land-use equity clauses to safeguard vulnerable farming landholders.</td>
+                <td>Evaluating standard-form solicitor retainer agreements, client disclosure notices, and costs agreements under Uniform Law Part 4.3.</td>
+              </tr>
+              <tr>
+                <td><strong>Cross-Border Regulatory Due Diligence</strong></td>
+                <td>I evaluated foreign investment regulations, anti-slavery supply disclosures, and cross-border environmental standards.</td>
+                <td>Interpreting foreign jurisdiction qualification equivalency for interstate and overseas practitioners seeking NSW admission.</td>
+              </tr>
+              <tr>
+                <td><strong>Equitable Revenue Distribution Waterfalls</strong></td>
+                <td>I modelled fiduciary escrow accounts to protect landowner royalties prior to clean energy project commissioning.</td>
+                <td>Performing forensic trust accounting reviews, tracing client trust money, and detecting irregular disbursements under Uniform Law Part 4.2.</td>
+              </tr>
+              <tr>
+                <td><strong>High-Pressure Delivery under Shock Deadlines</strong></td>
+                <td>I unified Group 5A's disparate slides into an integrated, client-ready pitch under stringent capstone time constraints.</td>
+                <td>Managing heavy caseload throughput, meeting statutory investigation reporting deadlines, and maintaining investigative composure.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Page 3 Navigation Footer -->
+      <footer class="page-footer-nav">
+        <button class="btn-charter secondary" onclick="navigateToPage(2)">
+          &larr; Back to Page 02: WEF Core Skills
+        </button>
+        <button class="btn-charter" onclick="navigateToPage(4)">
+          Proceed to Page 04: Psychometric Team Dynamics &rarr;
+        </button>
+      </footer>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 4: PSYCHOMETRIC TEAM DYNAMICS & REFLEXIVE EVALUATION
+         =================================================================== -->
+    <section id="page-4" class="portfolio-page" role="tabpanel" aria-labelledby="tab-btn-4">
+      <header class="section-header">
+        <span class="kicker">Page 04 &bull; Empirical Psychological Assessment</span>
+        <h2>Psychometric Team Dynamics &amp; Reflexive Evaluation</h2>
+        <p class="subhead">
+          An empirical evaluation of my Week 6 Personalised Feedback Report from the School of Psychological Sciences, analysing my psychometric profile, interpersonal dynamics, and team resilience under pressure.
+        </p>
+      </header>
+
+      <!-- Psychometric Overview Panel -->
+      <div class="leaf-panel brass-accent">
+        <h3 class="card-title">Empirical Methodology: Week 6 Survey 2 Report</h3>
+        <p>
+          In Week 6 of MQBS3010, following several weeks of intensive collaborative development, our team completed Survey 2 with the <em>School of Psychological Sciences</em>. This diagnostic report benchmarked my individual self-reported responses against the aggregated average of my teammates across core psychological and interpersonal constructs.
+        </p>
+        <p>
+          Rather than functioning as a clinical evaluation, this report provides an objective mirror of how I operate in high-stakes professional environments. The findings confirm that I maintain exceptionally high levels of <strong>Psychological Safety</strong>, <strong>Team Trust</strong>, <strong>Interpersonal Emotion Management</strong>, and <strong>Pre-emptive Resilience Behaviours</strong>, while sustaining a calm, non-confrontational relational tone despite confronting 13 concurrent external pressures.
+        </p>
+      </div>
+
+      <!-- Comparative Data Visualisation & Metrics Dashboard -->
+      <div class="grid-2col">
+        <!-- Interactive Chart Panel -->
+        <article class="leaf-panel navy-accent">
+          <h3 class="card-title">My Individual Scores vs. Team Average</h3>
+          <h4 class="card-subtitle">Source: School of Psychological Sciences Week 6 Survey 2</h4>
+
+          <div class="chart-container" id="psychometric-bars">
+            <!-- Metric 1: Psychological Safety -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Psychological Safety (1–7 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 6.5</span>
+                  <span class="val-team">Team Avg: 6.2</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 92.8%;"></div>
+                <div class="bar-marker-team" style="left: 88.5%;" title="Team Average: 6.2"></div>
+              </div>
+            </div>
+
+            <!-- Metric 2: Team Trust -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Overall Trust &amp; Reliability (1–7 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 6.0</span>
+                  <span class="val-team">Team Avg: 5.8</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 85.7%;"></div>
+                <div class="bar-marker-team" style="left: 82.8%;" title="Team Average: 5.8"></div>
+              </div>
+            </div>
+
+            <!-- Metric 3: Interpersonal Emotion Management -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Interpersonal Emotion Management (1–7 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 6.2</span>
+                  <span class="val-team">Team Avg: 5.9</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 88.5%;"></div>
+                <div class="bar-marker-team" style="left: 84.2%;" title="Team Average: 5.9"></div>
+              </div>
+            </div>
+
+            <!-- Metric 4: Resilience Minimisation Behaviours -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Pre-emptive Risk Minimisation (1–5 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 4.6</span>
+                  <span class="val-team">Team Avg: 4.0</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 92.0%;"></div>
+                <div class="bar-marker-team" style="left: 80.0%;" title="Team Average: 4.0"></div>
+              </div>
+            </div>
+
+            <!-- Metric 5: Team Efficacy -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Team Efficacy &amp; Collective Capability (1–5 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 4.5</span>
+                  <span class="val-team">Team Avg: 4.4</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 90.0%;"></div>
+                <div class="bar-marker-team" style="left: 88.0%;" title="Team Average: 4.4"></div>
+              </div>
+            </div>
+
+            <!-- Metric 6: Positive Affect -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Positive Affect &amp; Morale (1–5 scale)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 4.4</span>
+                  <span class="val-team">Team Avg: 4.3</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 88.0%;"></div>
+                <div class="bar-marker-team" style="left: 86.0%;" title="Team Average: 4.3"></div>
+              </div>
+            </div>
+
+            <!-- Metric 7: Task & Relational Conflict -->
+            <div class="metric-row">
+              <div class="metric-header">
+                <span class="metric-name">Internal Team Conflict (1–5 scale; Lower is calmer)</span>
+                <span class="metric-values">
+                  <span class="val-me">I: 1.5</span>
+                  <span class="val-team">Team Avg: 1.6</span>
+                </span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill-me" style="width: 30.0%; background-color: var(--secondary);"></div>
+                <div class="bar-marker-team" style="left: 32.0%;" title="Team Average: 1.6"></div>
+              </div>
+            </div>
+          </div>
+
+          <p class="caption">
+            Legend: Navy solid bar represents my individual response; Gold vertical marker represents my team members' aggregated benchmark.
+          </p>
+        </article>
+
+        <!-- Qualitative Self-Reflection Narrative -->
+        <article class="leaf-panel green-accent">
+          <h3 class="card-title">Reflexive Evaluation &amp; Lived Experience</h3>
+          <h4 class="card-subtitle">Deconstructing Divergence, Foresight, and Emotion Regulation</h4>
+          <p>
+            When critically examining my survey profile against our lived group dynamics, three significant psychological insights emerge:
+          </p>
+          <p>
+            <strong>1. Proactive Risk Foresight (Minimising Behaviours: 4.6 vs. 4.0):</strong> The data reveals that my perception of our pre-emptive preparation was notably higher than my teammates' average. In our project, I took the initiative to map out worst-case scenario contingencies for supply-chain bottlenecks and deadline shocks. As the report wisely cautioned, experiencing higher readiness can lead one to overlook the quiet doubts held by teammates. Recognizing this divergence, I held deliberate check-ins with quieter peers to ensure our shared risk picture was genuinely aligned.
+          </p>
+          <p>
+            <strong>2. Interpersonal Emotion Management (6.2 vs. 5.9):</strong> The survey highlighted my frequent use of <em>Cognitive Change</em> (helping teammates reframe overwhelming hurdles into manageable micro-tasks) and <em>Situation Modification</em> (reorganising shared workspaces to alleviate stress). While being an emotional anchor supported group morale, I have learned to ensure this emotional stewardship remains sustainable, encouraging distributed self-regulation rather than absorbing all pressure myself.
+          </p>
+          <p>
+            <strong>3. Navigating Low Conflict (1.5 / 5):</strong> Our team experienced minimal relational tension despite rating 13 out of 13 concurrent external pressures. As the <a href="https://www.linkedin.com/in/rodriguesnick/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">People Partner at Canva</a> observed, low conflict must never become "artificial harmony" where members avoid challenging ideas. I made it a point to deliberately invite dissent by asking: <em>"What flaws in this sourcing strategy are we currently blind to?"</em>
+          </p>
+        </article>
+      </div>
+
+      <!-- Expandable Reflexive Synthesis Accordion -->
+      <section class="leaf-panel">
+        <h3 class="card-title">Deep-Dive Reflexive Accordion: Four Core Survey Inquiries</h3>
+        <p>Explore my detailed reflections answering the formal reflection prompts posed by the Psychology Sciences Report:</p>
+
+        <div class="accordion-item open">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            <span>Reflection A: How do I actively support others to feel safe speaking up in high-stakes compliance contexts?</span>
+            <span class="accordion-icon">&darr;</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              In our capstone team, psychological safety was not an accident; it was cultivated through conscious interpersonal vulnerability. When I encountered ambiguity in interpreting FIRB capital restrictions for our King's Foundation deck, I openly declared to my team: <em>"I don't know the exact precedent for this yet, let's explore it together."</em> As Dr Joe Steensma noted in our Week 1 lecture, authentic, humble leadership builds far more trust than projecting unearned polish. In the Law Society's Assessment and Compliance team, I will foster psychological safety by championing colleagues who raise difficult evidentiary discrepancies, ensuring that junior officers never feel intimidated when reporting anomalous trust account findings.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            <span>Reflection B: Why did our team experience so little conflict under 13 concurrent pressures?</span>
+            <span class="accordion-icon">&darr;</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Confronting 13 concurrent external pressures (rated at 3/5 severity) typically breeds friction in student groups. In Group 5A, our near-zero relationship conflict (1.2/5) stemmed from our early establishment of transparent role boundaries and shared efficacy (4.5/5). Because I immediately assumed responsibility for the international legal and sourcing components, and my teammates took ownership of marketing and financial feasibility, there was no role ambiguity. When task disagreements arose over slide allocations, we resolved them by testing proposals against our client's core criteria rather than personal preferences.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            <span>Reflection C: What motivated my high Interpersonal Emotion Management, and how do I sustain it?</span>
+            <span class="accordion-icon">&darr;</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              My motivation to manage team emotions originates from my operational background as a Staff Sergeant in the Australian Army Cadets and my non-profit leadership at Pass it Forward. I have observed firsthand that when anxiety spikes, cognitive bandwidth collapses. By employing attentional deployment—shifting focus from panic over time limits toward celebrating the completion of individual slides—I preserved our team's positive affect (4.4/5). To ensure sustainability in a demanding regulatory career, I practice setting strict boundaries, engaging in debriefing, and distributing emotional support across the entire team.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" onclick="toggleAccordion(this)">
+            <span>Reflection D: How does our Week 6 resilience translate into future regulatory compliance practice?</span>
+            <span class="accordion-icon">&darr;</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Our high resilience score (4.3/5) across Minimising (4.6), Managing (4.2), and Mending (4.3) demonstrates a complete cycle of organisational agility. In regulatory compliance, things rarely proceed in a linear fashion: practitioners fail to respond to Section 466 audit requests, unexpected complaints arrive, and legislative amendments occur mid-stream. My evidenced ability to anticipate disruption (minimise), pivot responsibilities under stress (manage), and debrief to extract institutional learning (mend) aligns directly with the resilience required of a Law Society investigator.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page 4 Navigation Footer -->
+      <footer class="page-footer-nav">
+        <button class="btn-charter secondary" onclick="navigateToPage(3)">
+          &larr; Back to Page 03: Capstone Agility Evidence
+        </button>
+        <button class="btn-charter" onclick="navigateToPage(5)">
+          Proceed to Page 05: Multidisciplinary Practice &rarr;
+        </button>
+      </footer>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 5: MULTIDISCIPLINARY PRACTICE & PROFESSIONAL EVIDENCE
+         =================================================================== -->
+    <section id="page-5" class="portfolio-page" role="tabpanel" aria-labelledby="tab-btn-5">
+      <header class="section-header">
+        <span class="kicker">Page 05 &bull; Breadth of Evidence Beyond the Unit</span>
+        <h2>Multidisciplinary Practice &amp; Professional Portfolio</h2>
+        <p class="subhead">
+          Evidencing my broader vocational journey beyond the capstone: legal paralegal practice, automotive operations compliance, non-profit governance, and editorial leadership.
+        </p>
+      </header>
+
+      <!-- External Dimension Overview -->
+      <div class="leaf-panel brass-accent">
+        <h3 class="card-title">Demonstrated Competency Across Diverse Professional Arenas</h3>
+        <p>
+          In accordance with the assessment criteria, one-third of this presentation showcases my verified capabilities outside MQBS3010. My professional identity is reinforced by practical experience across multiple demanding domains, demonstrating my capacity to navigate statutory compliance, administrative organisation, financial governance, and high-stakes leadership.
+        </p>
+      </div>
+
+      <!-- Professional Experience Grid -->
+      <div class="grid-2col">
+        <!-- Experience 1: The People's Solicitors -->
+        <article class="leaf-panel navy-accent">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3 class="card-title">Paralegal</h3>
+            <span class="badge-pill gold">Dec 2025 &ndash; Present</span>
+          </div>
+          <h4 class="card-subtitle">The People's Solicitors &bull; Greater Sydney Area (Hybrid)</h4>
+          <p>
+            In my current role as Paralegal at The People's Solicitors, I work on the front lines of private legal practice, directly supporting senior solicitors across civil, commercial, and administrative litigation.
+          </p>
+          <ul style="padding-left: var(--space-4); margin-bottom: var(--space-3);">
+            <li><strong>Legal Research &amp; Brief Preparation:</strong> Conducting forensic statutory interpretation and case precedent retrieval using AustLII, Jade, and Westlaw to draft preliminary advice memorandums.</li>
+            <li><strong>Client File Auditing &amp; Compliance:</strong> Managing client onboarding documentation, ensuring compliance with verification-of-identity (VOI) rules and cost disclosure requirements under Part 4.3 of the Uniform Law.</li>
+            <li><strong>Trust Accounting Familiarity:</strong> Liaising with our practice manager on trust deposit authorizations, ensuring client retainers strictly comply with NSW trust account regulations.</li>
+          </ul>
+          <p class="caption">
+            <em>Direct Transferability:</em> This hands-on legal experience gives me firsthand familiarity with the operational realities and compliance pressures faced by the private practitioners whom The Law Society oversees.
+          </p>
+        </article>
+
+        <!-- Experience 2: AutoSwift -->
+        <article class="leaf-panel green-accent">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3 class="card-title">Administrative Assistant &amp; Compliance</h3>
+            <span class="badge-pill">Aug 2026 &ndash; Present</span>
+          </div>
+          <h4 class="card-subtitle">AutoSwift &bull; Sydney (On-site)</h4>
+          <p>
+            At AutoSwift, I coordinate high-volume administrative workflows and regulatory records management within an intensive commercial environment.
+          </p>
+          <ul style="padding-left: var(--space-4); margin-bottom: var(--space-3);">
+            <li><strong>Regulatory Documentation &amp; Title Verification:</strong> Ensuring every commercial vehicle acquisition and transfer satisfies statutory registration, PPSR encumbrance checks, and NSW Fair Trading standards.</li>
+            <li><strong>Workflow Optimization:</strong> Streamlining internal compliance registries, reducing documentation backlog, and digitising paper-based statutory declarations.</li>
+            <li><strong>Stakeholder Negotiation:</strong> Communicating with financial institutions, regulatory authorities, and clients to resolve encumbrance discrepancies calmly and accurately.</li>
+          </ul>
+          <p class="caption">
+            <em>Direct Transferability:</em> The meticulous record-keeping and procedural accuracy I cultivate daily at AutoSwift mirror the precision needed to audit annual trust account lodgements and practising certificate filings.
+          </p>
+        </article>
+
+        <!-- Experience 3: Pass it Forward -->
+        <article class="leaf-panel">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3 class="card-title">Founding Director &amp; Board Chair</h3>
+            <span class="badge-pill gold">Nov 2024 &ndash; Present</span>
+          </div>
+          <h4 class="card-subtitle">Pass it Forward (Registered Youth Charity) &bull; Sydney</h4>
+          <p>
+            I founded and lead <em>Pass it Forward</em>, a registered community non-profit dedicated to supporting disadvantaged children and youth through educational and sporting resource re-distribution.
+          </p>
+          <ul style="padding-left: var(--space-4); margin-bottom: var(--space-3);">
+            <li><strong>Statutory Governance:</strong> Overseeing compliance with the Australian Charities and Not-for-profits Commission (ACNC) regulatory framework, ensuring transparent annual information statements.</li>
+            <li><strong>Financial Risk Management:</strong> Managing banking authorisations, donation audits, and public liability compliance for large-scale community events.</li>
+            <li><strong>Social Influence &amp; Leadership:</strong> Directing our volunteer committee, chairing board meetings, and building alliances with local municipal councils and sponsors.</li>
+          </ul>
+          <p class="caption">
+            <em>Direct Transferability:</em> Exercising fiduciary stewardship over donated funds has instilled in me an unshakeable appreciation for the public protection mandate that drives The Law Society of NSW.
+          </p>
+        </article>
+
+        <!-- Experience 4: Dogbowl Magazine & Cadets -->
+        <article class="leaf-panel">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h3 class="card-title">Editorial &amp; Operational Leadership</h3>
+            <span class="badge-pill">2023 &ndash; Present</span>
+          </div>
+          <h4 class="card-subtitle">Lead Editor, Dogbowl Magazine &bull; Staff Sergeant, Army Cadets</h4>
+          <p>
+            My broader leadership journey spans cultural publishing and operational military discipline:
+          </p>
+          <ul style="padding-left: var(--space-4); margin-bottom: var(--space-3);">
+            <li><strong>Lead Editor, Dogbowl Magazine (Mar 2025 &ndash; Present):</strong> Directing print editions and digital releases; managing copyright agreements, intellectual property licensing, contributor contracts, and editorial proofing under strict print production deadlines.</li>
+            <li><strong>Staff Sergeant, Australian Army Cadets (2023):</strong> Serving as a senior non-commissioned officer responsible for platoon discipline, operational risk assessments, tactical field drills, and mentoring junior cadets under physically and mentally demanding conditions.</li>
+          </ul>
+          <p class="caption">
+            <em>Direct Transferability:</em> Both roles instilled exceptional attention to detail, calm command under pressure, and the ability to maintain procedural integrity when managing complex human dynamics.
+          </p>
+        </article>
+      </div>
+
+      <!-- 12-Month Professional Development Trajectory at The Law Society -->
+      <section class="leaf-panel">
+        <h3 class="card-title">My 12-Month Professional Trajectory: Assessment &amp; Compliance</h3>
+        <h4 class="card-subtitle">Actionable milestones to deliver value as a Graduate Solicitor</h4>
+        <div class="data-table-container">
+          <table class="charter-table" aria-label="12-Month Professional Roadmap">
+            <thead>
+              <tr>
+                <th>Quarter</th>
+                <th>Core Regulatory Milestone</th>
+                <th>Target Competency Development</th>
+                <th>Intended Institutional Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Months 1&ndash;3 (Onboarding &amp; Immersion)</strong></td>
+                <td>Master internal Assessment &amp; Compliance database systems, trust lodgement portals, and Section 466 investigation workflows.</td>
+                <td>Following the guidance of the <a href="https://www.linkedin.com/in/fahmida-mridha/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Analyst at The Law Society of New South Wales</a>, invest first 90 days in learning institutional context before seeking to redesign processes.</td>
+                <td>Zero-error administrative processing of practising certificate renewals and initial complaint triage.</td>
+              </tr>
+              <tr>
+                <td><strong>Months 4&ndash;6 (Investigative Execution)</strong></td>
+                <td>Conduct supervised investigations into trust account discrepancies, drafting formal Section 466 notices and audit reviews.</td>
+                <td>Synthesising quantitative ledger forensics with qualitative practitioner correspondence to identify substantive breaches of Uniform Law Part 4.2.</td>
+                <td>Drafting clear, objective investigation briefs that reduce senior solicitor review cycles by 25%.</td>
+              </tr>
+              <tr>
+                <td><strong>Months 7&ndash;9 (AML/CTF Reform Support)</strong></td>
+                <td>Assist the Directorate's working party preparing the profession for Tranche 2 Anti-Money Laundering legislation compliance.</td>
+                <td>Applying my international commerce scholarship to develop educational toolkits and risk-assessment matrices for small firm practitioners.</td>
+                <td>Strengthening practitioner awareness and safeguarding the NSW profession against systemic illicit financial vulnerabilities.</td>
+              </tr>
+              <tr>
+                <td><strong>Months 10&ndash;12 (Autonomous Management)</strong></td>
+                <td>Autonomously manage a caseload of fitness-to-practise assessments and external examiner report evaluations; commence CA or regulatory compliance certifications.</td>
+                <td>Exemplifying the advice of the <a href="https://www.linkedin.com/in/ahad-anhiang-zafar-5b87a7183/" target="_blank" rel="noopener noreferrer" class="guest-linkedin-link">Senior Accountant at Lighthouse Service Partners</a> to "be the change you want to see" through proactive recommendations.</td>
+                <td>Positioning myself as a trusted, high-performing legal officer committed to long-term regulatory service within The Law Society of NSW.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Concluding Statement -->
+      <div class="leaf-panel brass-accent" style="text-align: center; padding: var(--space-8) var(--space-6);">
+        <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: var(--space-3);">Commitment to Regulatory Excellence &amp; Integrity</h3>
+        <p style="max-width: 80ch; margin: 0 auto var(--space-4);">
+          I am eager to bring my legal analytical capability, operational diligence, and deep commitment to public protection to the Assessment and Compliance team at The Law Society of New South Wales. I welcome the opportunity to discuss how my qualifications align with the Society's statutory mission.
+        </p>
+        <span class="badge-pill gold" style="font-size: 0.85rem; padding: var(--space-2) var(--space-4);">
+          Oliver Yao &bull; Bachelor of Commerce / Laws &bull; Macquarie University &bull; Candidate 48137782
+        </span>
+      </div>
+
+      <!-- Page 5 Navigation Footer -->
+      <footer class="page-footer-nav">
+        <button class="btn-charter secondary" onclick="navigateToPage(4)">
+          &larr; Back to Page 04: Psychometric Team Dynamics
+        </button>
+        <button class="btn-charter" onclick="navigateToPage(1)">
+          Return to Page 01: Executive Profile &uarr;
+        </button>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Modal for External Profile Navigation Details -->
+  <div id="linkModal" class="link-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="link-modal">
+      <h3 id="modalTitle">Industry Guest Speaker LinkedIn Profile</h3>
+      <p id="modalDesc">
+        Direct link destination: <br><strong id="modalUrl" style="color: var(--primary);"></strong>
+      </p>
+      <p style="font-size: 0.82rem; color: var(--on-surface-variant);">
+        This official profile evidences the guest speaker's industry credentials referenced in my MQBS3010 presentation.
+      </p>
+      <div class="modal-actions">
+        <button class="btn-charter secondary" onclick="closeLinkModal()">Close</button>
+        <button class="btn-charter" id="modalOpenBtn" onclick="openLinkDestination()">Open Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <api-shim></api-shim>
+
+  <script>
+    // State management and page switching
+    let currentPage = 1;
+    let pendingUrl = '';
+
+    function navigateToPage(pageNumber) {
+      if (pageNumber < 1 || pageNumber > 5) return;
+      currentPage = pageNumber;
+
+      // Update Tab Buttons
+      for (let i = 1; i <= 5; i++) {
+        const btn = document.getElementById(`tab-btn-${i}`);
+        const page = document.getElementById(`page-${i}`);
+        if (btn) {
+          if (i === pageNumber) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+          } else {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+          }
+        }
+        if (page) {
+          if (i === pageNumber) {
+            page.classList.add('active-page');
+          } else {
+            page.classList.remove('active-page');
+          }
+        }
+      }
+
+      // Scroll smoothly to top of main container
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      // Update location hash defensively
+      try {
+        if (history.replaceState) {
+          history.replaceState(null, '', `#page-${pageNumber}`);
+        }
+      } catch (e) {
+        // Fallback for restricted iframe
+      }
+    }
+
+    function switchSubtab(event, targetId) {
+      const container = event.currentTarget.closest('.leaf-panel');
+      if (!container) return;
+
+      const buttons = container.querySelectorAll('.subtab-btn');
+      const contents = container.querySelectorAll('.subtab-content');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+    }
+
+    function toggleAccordion(button) {
+      const item = button.closest('.accordion-item');
+      if (!item) return;
+      item.classList.toggle('open');
+    }
+
+    function handleGuestLinkClick(url, event) {
+      // Allow default link behavior in normal desktop browsers
+      // In sandboxed environments where popups are blocked, show modal fallback
+      if (window.self !== window.top) {
+        // We are inside an iframe; provide modal fallback to prevent iframe replacement
+        if (event) {
+          event.preventDefault();
+        }
+        pendingUrl = url;
+        const modal = document.getElementById('linkModal');
+        const modalUrlEl = document.getElementById('modalUrl');
+        if (modal && modalUrlEl) {
+          modalUrlEl.textContent = url;
+          modal.style.display = 'flex';
+        }
+      }
+    }
+
+    function closeLinkModal() {
+      const modal = document.getElementById('linkModal');
+      if (modal) {
+        modal.style.display = 'none';
+      }
+      pendingUrl = '';
+    }
+
+    function openLinkDestination() {
+      if (pendingUrl) {
+        try {
+          window['open'](pendingUrl, '_blank');
+        } catch (err) {
+          // If popup is blocked, copy to clipboard as graceful degradation
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(pendingUrl);
+            alert('LinkedIn Profile URL copied to clipboard: ' + pendingUrl);
+          }
+        }
+      }
+      closeLinkModal();
+    }
+
+    // Attach click listeners to guest links for robust handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a.guest-linkedin-link');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('http')) {
+            handleGuestLinkClick(href, e);
+          }
+        });
+      });
+
+      // Check initial hash
+      if (window.location.hash) {
+        const match = window.location.hash.match(/#page-(\d)/);
+        if (match && match[1]) {
+          const initialPage = parseInt(match[1], 10);
+          if (initialPage >= 1 && initialPage <= 5) {
+            navigateToPage(initialPage);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
